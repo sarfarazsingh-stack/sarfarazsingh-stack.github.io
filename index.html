@@ -8,25 +8,122 @@
   <meta name="author" content="Coffee Connects">
   <link rel="icon" href="/favicon.ico">
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#d97706;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
-    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#071126 0%, #0b1220 100%)}
-    .container{max-width:980px;margin:48px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#f97316,#f43f5e);display:flex;align-items:center;justify-content:center;font-weight:700;color:#091126}
-    h1{margin:8px 0 0;font-size:28px}
-    p.lead{color:var(--muted);margin:8px 0 0}
-
-    .hero{display:flex;gap:28px;margin-top:28px;align-items:center}
-    .card{background:var(--glass);padding:20px;border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6);flex:1}
-    .cta{background:linear-gradient(90deg,var(--accent),#ef4444);color:#071126;padding:12px 18px;border-radius:10px;border:none;font-weight:600;cursor:pointer}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
-    .feature{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:10px}
-    footer{margin-top:36px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
-    .small{font-size:13px;color:var(--muted)}
-    a.button-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:8px;text-decoration:none}
-
-    @media(max-width:720px){.hero{flex-direction:column}}
+    :root{
+      --bg: #fcf1e7;
+      --card: #f9e4d6;
+      --accent: #b07b4d;
+      --muted: #826b5c;
+      --glass: rgba(255,245,235,0.78);
+      --header: #5c432b;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      color:var(--header);
+      background:linear-gradient(180deg,#fcf1e7 0%, #f5e1d6 100%);
+    }
+    .container{
+      max-width:860px;
+      margin:48px auto;
+      padding:32px 20px;
+      background:var(--glass);
+      border-radius:22px;
+      box-shadow:0 4px 18px rgba(176,123,77,0.10);
+    }
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .logo{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#c7a17a,#89673c);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:20px;
+      color:#fcf1e7;
+      box-shadow:0 2px 12px rgba(176,123,77,0.05);
+    }
+    h1{
+      margin:8px 0 0;
+      font-size:32px;
+      color:var(--header);
+    }
+    p.lead{
+      color:var(--muted);
+      margin:8px 0 0;
+      font-size:1.08em;
+      font-weight:400;
+    }
+    nav a.button-ghost{
+      background:transparent;
+      border:none;
+      color:var(--accent);
+      padding:8px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:1em;
+      font-weight:500;
+      transition:color 0.18s;
+    }
+    nav a.button-ghost:hover{
+      color:var(--header);
+    }
+    .card{
+      background:var(--card);
+      padding:28px;
+      border-radius:16px;
+      box-shadow:0 2px 16px rgba(176,123,77,0.10);
+      margin-bottom:24px;
+    }
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:24px;
+      margin-top:20px;
+      margin-bottom:16px;
+    }
+    .feature{
+      background:linear-gradient(180deg,rgba(176,123,77,0.03),transparent);
+      padding:18px;
+      border-radius:13px;
+      color:var(--header);
+      box-shadow:0 1px 8px rgba(176,123,77,0.06);
+    }
+    h3,h4{
+      color:var(--accent);
+      margin-top:0;
+      margin-bottom:10px;
+    }
+    .small{
+      font-size:15px;
+      color:var(--muted);
+    }
+    footer{
+      margin-top:40px;
+      color:var(--muted);
+      font-size:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-top:1px solid #efd3be;
+      padding-top:20px;
+    }
+    @media(max-width:650px){
+      .container{padding:18px 6px;}
+      header,footer{flex-direction:column;align-items:flex-start;}
+      .features{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
@@ -41,31 +138,18 @@
       </div>
       <nav>
         <a class="button-ghost" href="#about">About</a>
-        <a class="button-ghost" href="#sessions">Sessions</a>
-        <a class="button-ghost" href="#contact">Contact</a>
+        <a class="button-ghost" href="#sessions">Features</a>
+        <a class="button-ghost" href="#contact">Community</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="card">
-        <h2>What's Brewing</h2>
-        <p class="small">A simple platform to discover local and virtual coffee sessions, join conversations, and grow your network — one cup at a time.</p>
-        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
-          <button class="cta" onclick="joinWaitlist()">Join the waitlist</button>
-          <a href="#sessions" class="button-ghost">Browse sessions</a>
-        </div>
-      </div>
-      <div style="width:320px;min-width:240px;">
-        <div class="card">
-          <h3>Next session</h3>
-          <p class="small">"Designing for Serendipity" — Oct 30, 2025 · 10:00 AM UTC</p>
-          <p style="margin-top:8px;color:var(--muted);">Hosted by: Maya R.</p>
-          <div style="margin-top:12px;display:flex;gap:8px;">
-            <button class="cta" style="flex:1">Reserve a seat</button>
-            <button class="button-ghost" style="flex:1">Details</button>
-          </div>
-        </div>
-      </div>
+    <section class="card" id="about" style="margin-bottom:12px;">
+      <h3>About Coffee Connects</h3>
+      <p class="small">
+        Coffee Connects believes that some of the best ideas happen during casual conversations.<br>
+        What's Brewing is our lightweight platform dedicated to creating welcoming spaces for local and virtual coffee sessions. 
+        Here, you can discover curated conversations, connect by interests, and turn shared moments into new opportunities together.
+      </p>
     </section>
 
     <section id="sessions" class="features">
@@ -75,65 +159,29 @@
       </div>
       <div class="feature">
         <h4>Host</h4>
-        <p class="small">Create sessions, set a capacity, and add prompts to guide conversation.</p>
+        <p class="small">Create sessions, set capacity, and add prompts to guide thoughtful conversations.</p>
       </div>
       <div class="feature">
         <h4>Connect</h4>
-        <p class="small">Match with like-minded attendees and follow up after the session.</p>
+        <p class="small">Meet like-minded attendees and follow up after the session for lasting connection.</p>
       </div>
     </section>
 
-    <section id="about" style="margin-top:22px;">
-      <div class="card">
-        <h3>About Coffee Connects</h3>
-        <p class="small">Coffee Connects believes that some of the best ideas happen during casual conversations. What's Brewing is our lightweight landing experience — share it, join sessions, and bring your next great idea to life.</p>
-      </div>
-    </section>
-
-    <section id="contact" style="margin-top:18px;display:flex;gap:16px;align-items:flex-start;">
-      <form class="card" style="flex:1;" onsubmit="subscribe(event)">
-        <h3>Get updates</h3>
-        <p class="small">Join the mailing list for launch updates and session highlights.</p>
-        <label style="display:block;margin-top:12px;font-size:13px;color:var(--muted)">Email</label>
-        <input id="email" type="email" required placeholder="you@coffee.com" style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-        <div style="margin-top:12px;display:flex;gap:10px;">
-          <button class="cta" type="submit">Subscribe</button>
-          <button class="button-ghost" type="button" onclick="document.getElementById('email').value='';">Clear</button>
-        </div>
-        <p id="msg" class="small" style="margin-top:10px;display:none"></p>
-      </form>
-      <div style="width:260px;">
-        <div class="card">
-          <h4>Community</h4>
-          <p class="small">Join us on social channels to stay in touch and find co-hosts for your sessions.</p>
-          <div style="margin-top:12px;display:flex;gap:8px;">
-            <a class="button-ghost" href="#">Twitter</a>
-            <a class="button-ghost" href="#">LinkedIn</a>
-          </div>
-        </div>
+    <section class="card" id="contact" style="margin-bottom:10px;">
+      <h3>Community</h3>
+      <p class="small">
+        Explore our social channels to stay in touch with Coffee Connects. Find co-hosts for your sessions and share ideas with others who believe in coffee-powered connections.
+      </p>
+      <div style="margin-top:12px;display:flex;gap:12px;">
+        <span style="color:var(--muted);background:rgba(176,123,77,0.07);padding:6px 14px;border-radius:7px;">Twitter</span>
+        <span style="color:var(--muted);background:rgba(176,123,77,0.07);padding:6px 14px;border-radius:7px;">LinkedIn</span>
       </div>
     </section>
 
     <footer>
       <div class="small">© 2025 Coffee Connects</div>
-      <div class="small">Built with ☕ · <a href="https://github.com/sarfarazsingh-stack/sarfarazsingh-stack.github.io" style="color:var(--muted);text-decoration:none">Repository</a></div>
+      <div class="small">Built with ☕</div>
     </footer>
   </div>
-
-  <script>
-    function joinWaitlist(){
-      const email = prompt('Enter your email to join the waitlist');
-      if(email) alert('Thanks — we\'ll be in touch at ' + email);
-    }
-    function subscribe(e){
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      const msg = document.getElementById('msg');
-      msg.style.display = 'block';
-      msg.textContent = 'Thanks for subscribing — we\'ll email updates to ' + email + '.';
-      setTimeout(()=>msg.style.display='none',5000);
-      document.getElementById('email').value = '';
-    }
-  </script>
 </body>
 </html>
